@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<StackPane prefHeight="780.0" prefWidth="860.0" style="-fx-background-color: #ECE9D8; -fx-font-family: 'Segoe UI', Tahoma, sans-serif;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.AppController">
+
+    <BorderPane fx:id="gamePane" prefHeight="780.0" prefWidth="860.0" style="-fx-background-color: #ECE9D8;">
+
+        <top>
+            <VBox alignment="CENTER" spacing="4" style="-fx-padding: 10 0 10 0;                          -fx-border-color: transparent transparent #A0A0A0 transparent;                          -fx-border-width: 0 0 1 0;">
+                <Label style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #003399;" text="KŌNANE" />
+                <Label fx:id="lblStatus" style="-fx-font-size: 14px; -fx-text-fill: #000000;" text="Turno: Preto [B]" />
+            </VBox>
+        </top>
+
+        <center>
+            <HBox alignment="CENTER" spacing="24" style="-fx-padding: 10 20 20 20;">
+
+                <VBox alignment="CENTER" spacing="0">
+                    <HBox spacing="0" style="-fx-padding: 0 0 4 30;">
+                        <Label alignment="CENTER" prefWidth="60" style="-fx-text-fill: #000000; -fx-font-weight: bold; -fx-font-size: 14px;" text="A" />
+                        <Label alignment="CENTER" prefWidth="60" style="-fx-text-fill: #000000; -fx-font-weight: bold; -fx-font-size: 14px;" text="B" />
+                        <Label alignment="CENTER" prefWidth="60" style="-fx-text-fill: #000000; -fx-font-weight: bold; -fx-font-size: 14px;" text="C" />
+                        <Label alignment="CENTER" prefWidth="60" style="-fx-text-fill: #000000; -fx-font-weight: bold; -fx-font-size: 14px;" text="D" />
+                        <Label alignment="CENTER" prefWidth="60" style="-fx-text-fill: #000000; -fx-font-weight: bold; -fx-font-size: 14px;" text="E" />
+                        <Label alignment="CENTER" prefWidth="60" style="-fx-text-fill: #000000; -fx-font-weight: bold; -fx-font-size: 14px;" text="F" />
+                    </HBox>
+
+                    <HBox spacing="0">
+                        <VBox spacing="0">
+                            <Label alignment="CENTER_RIGHT" prefHeight="60" prefWidth="30" style="-fx-text-fill: #000000; -fx-font-weight: bold; -fx-font-size: 14px; -fx-padding: 0 8 0 0;" text="0" />
+                            <Label alignment="CENTER_RIGHT" prefHeight="60" prefWidth="30" style="-fx-text-fill: #000000; -fx-font-weight: bold; -fx-font-size: 14px; -fx-padding: 0 8 0 0;" text="1" />
+                            <Label alignment="CENTER_RIGHT" prefHeight="60" prefWidth="30" style="-fx-text-fill: #000000; -fx-font-weight: bold; -fx-font-size: 14px; -fx-padding: 0 8 0 0;" text="2" />
+                            <Label alignment="CENTER_RIGHT" prefHeight="60" prefWidth="30" style="-fx-text-fill: #000000; -fx-font-weight: bold; -fx-font-size: 14px; -fx-padding: 0 8 0 0;" text="3" />
+                            <Label alignment="CENTER_RIGHT" prefHeight="60" prefWidth="30" style="-fx-text-fill: #000000; -fx-font-weight: bold; -fx-font-size: 14px; -fx-padding: 0 8 0 0;" text="4" />
+                            <Label alignment="CENTER_RIGHT" prefHeight="60" prefWidth="30" style="-fx-text-fill: #000000; -fx-font-weight: bold; -fx-font-size: 14px; -fx-padding: 0 8 0 0;" text="5" />
+                        </VBox>
+
+                        <GridPane fx:id="boardGrid" prefHeight="360" prefWidth="360" style="-fx-border-color: #808080 #FFFFFF #FFFFFF #808080; -fx-border-width: 3;                                          -fx-background-color: #C0C0C0; -fx-grid-lines-visible: true;">
+                            <columnConstraints>
+                                <ColumnConstraints maxWidth="60" minWidth="60" prefWidth="60" />
+                                <ColumnConstraints maxWidth="60" minWidth="60" prefWidth="60" />
+                                <ColumnConstraints maxWidth="60" minWidth="60" prefWidth="60" />
+                                <ColumnConstraints maxWidth="60" minWidth="60" prefWidth="60" />
+                                <ColumnConstraints maxWidth="60" minWidth="60" prefWidth="60" />
+                                <ColumnConstraints maxWidth="60" minWidth="60" prefWidth="60" />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints maxHeight="60" minHeight="60" prefHeight="60" />
+                                <RowConstraints maxHeight="60" minHeight="60" prefHeight="60" />
+                                <RowConstraints maxHeight="60" minHeight="60" prefHeight="60" />
+                                <RowConstraints maxHeight="60" minHeight="60" prefHeight="60" />
+                                <RowConstraints maxHeight="60" minHeight="60" prefHeight="60" />
+                                <RowConstraints maxHeight="60" minHeight="60" prefHeight="60" />
+                            </rowConstraints>
+                        </GridPane>
+                    </HBox>
+                </VBox>
+
+                <VBox alignment="TOP_CENTER" prefWidth="180" spacing="16" style="-fx-background-color: #F0F0F0; -fx-padding: 16;                              -fx-border-color: #FFFFFF #808080 #808080 #FFFFFF; -fx-border-width: 2;">
+                    <Label style="-fx-font-weight: bold; -fx-text-fill: #000000; -fx-font-size: 14px;" text="Sistema" />
+                    <Separator style="-fx-background-color: #A0A0A0;" />
+
+                    <VBox alignment="CENTER_LEFT" spacing="10" style="-fx-padding: 5 0 5 0;">
+                        <HBox alignment="CENTER_LEFT" spacing="12">
+                            <Label style="-fx-background-color: #000000; -fx-min-width: 20; -fx-min-height: 20;                                          -fx-border-color: #808080; -fx-border-width: 1;                                          -fx-background-radius: 10; -fx-border-radius: 10;" text="" />
+                            <Label style="-fx-text-fill: #000000; -fx-font-size: 12px;" text="Preto" />
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" spacing="12">
+                            <Label style="-fx-background-color: #FFFFFF; -fx-min-width: 20; -fx-min-height: 20;                                          -fx-border-color: #808080; -fx-border-width: 1;                                          -fx-background-radius: 10; -fx-border-radius: 10;" text="" />
+                            <Label style="-fx-text-fill: #000000; -fx-font-size: 12px;" text="Branco" />
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" spacing="12">
+                            <Label style="-fx-background-color: #0066CC; -fx-min-width: 20; -fx-min-height: 20;                                          -fx-border-color: #003399; -fx-border-width: 1;" text="" />
+                            <Label style="-fx-text-fill: #000000; -fx-font-size: 12px;" text="Selecionado" />
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" spacing="12">
+                            <Label style="-fx-background-color: #99CCFF; -fx-min-width: 20; -fx-min-height: 20;                                          -fx-border-color: #6699CC; -fx-border-width: 1;" text="" />
+                            <Label style="-fx-text-fill: #000000; -fx-font-size: 12px;" text="Jogada Válida" />
+                        </HBox>
+                    </VBox>
+
+                    <Separator style="-fx-background-color: #A0A0A0;" />
+                    <Label fx:id="lblTimer" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #003399;" text="00:30" />
+                    <Separator style="-fx-background-color: #A0A0A0;" />
+
+                    <VBox alignment="CENTER" spacing="8">
+                        <Button fx:id="btnUndo" onAction="#handleUndo" prefHeight="28" prefWidth="140" style="-fx-background-color: #E0E0E0; -fx-text-fill: #000000; -fx-border-color: #FFFFFF #808080 #808080 #FFFFFF; -fx-border-width: 2; -fx-cursor: hand;" text="Desfazer" />
+                        <Button fx:id="btnRestart" onAction="#handleRestart" prefHeight="28" prefWidth="140" style="-fx-background-color: #E0E0E0; -fx-text-fill: #000000; -fx-border-color: #FFFFFF #808080 #808080 #FFFFFF; -fx-border-width: 2; -fx-cursor: hand;" text="Reiniciar" />
+                        <Button fx:id="btnStopCapture" onAction="#handleStopCapture" prefHeight="28" prefWidth="140" style="-fx-background-color: #E0E0E0; -fx-text-fill: #000000; -fx-border-color: #FFFFFF #808080 #808080 #FFFFFF; -fx-border-width: 2; -fx-cursor: hand;" text="Parar Captura" />
+                        <Button fx:id="btnSave" onAction="#handleShowSave" prefHeight="28" prefWidth="140" style="-fx-background-color: #E0E0E0; -fx-text-fill: #000000; -fx-border-color: #FFFFFF #808080 #808080 #FFFFFF; -fx-border-width: 2; -fx-cursor: hand;" text="Guardar Jogo" />
+                        <Separator style="-fx-background-color: #A0A0A0;" />
+                        <Button fx:id="btnMenu" onAction="#handleShowMenu" prefHeight="28" prefWidth="140" style="-fx-background-color: #E0E0E0; -fx-text-fill: #000000; -fx-border-color: #FFFFFF #808080 #808080 #FFFFFF; -fx-border-width: 2; -fx-cursor: hand;" text="Menu Principal" />
+                    </VBox>
+                </VBox>
+            </HBox>
+        </center>
+
+        <bottom>
+            <HBox alignment="CENTER_LEFT" style="-fx-border-color: #808080 #FFFFFF #FFFFFF #808080; -fx-border-width: 2;                          -fx-background-color: #F0F0F0; -fx-padding: 4 8 4 8;">
+                <Label fx:id="lblMessage" style="-fx-text-fill: #000000; -fx-font-size: 12px;" text="Pronto." />
+            </HBox>
+        </bottom>
+    </BorderPane>
+
+
+    <StackPane fx:id="menuPane" prefHeight="780.0" prefWidth="860.0" style="-fx-background-color: rgba(236,233,216,1);">
+        <VBox alignment="CENTER" spacing="40" style="-fx-padding: 60 0 60 0;">
+
+            <VBox alignment="CENTER" spacing="6">
+                <Label style="-fx-font-size: 72px; -fx-font-weight: bold; -fx-text-fill: #003399;" text="KŌNANE" />
+            </VBox>
+
+            <Label style="-fx-background-color: #A0A0A0; -fx-min-height: 2; -fx-min-width: 400;" text="" />
+
+            <VBox alignment="CENTER" spacing="8">
+                <Label style="-fx-font-size: 13px; -fx-font-weight: bold; -fx-text-fill: #444444;" text="Grupo JG3" />
+                <Label style="-fx-font-size: 12px; -fx-text-fill: #555555;" text="Daniel Masqueiro — 129853" />
+                <Label style="-fx-font-size: 12px; -fx-text-fill: #555555;" text="Gonçalo Sobral — 129850" />
+                <Label style="-fx-font-size: 12px; -fx-text-fill: #555555;" text="Rafael Silva — 129834" />
+            </VBox>
+
+            <Label style="-fx-background-color: #A0A0A0; -fx-min-height: 2; -fx-min-width: 400;" text="" />
+
+            <VBox alignment="CENTER" spacing="10">
+                <Button fx:id="btnMenuPlay" onAction="#handleMenuPlay" prefHeight="44" prefWidth="200" style="-fx-background-color: #003399; -fx-text-fill: #FFFFFF; -fx-font-size: 16px;                                -fx-font-weight: bold; -fx-border-color: #6699CC #001166 #001166 #6699CC;                                -fx-border-width: 2; -fx-cursor: hand;" text="JOGAR" />
+                <Button fx:id="btnMenuLoad" onAction="#handleShowLoad" prefHeight="44" prefWidth="200" style="-fx-background-color: #E0E0E0; -fx-text-fill: #000000; -fx-font-size: 16px;                                -fx-font-weight: bold; -fx-border-color: #FFFFFF #808080 #808080 #FFFFFF;                                -fx-border-width: 2; -fx-cursor: hand;" text="CARREGAR JOGO" />
+            </VBox>
+        </VBox>
+
+        <StackPane.margin>
+            <javafx.geometry.Insets />
+        </StackPane.margin>
+    </StackPane>
+
+
+    <StackPane fx:id="settingsPane" managed="false" prefHeight="780.0" prefWidth="860.0" style="-fx-background-color: rgba(236,233,216,0.97);" visible="false">
+        <VBox alignment="CENTER">
+            <HBox alignment="CENTER" spacing="30" style="-fx-padding: 20 40 20 40;">
+
+                <VBox alignment="TOP_LEFT" spacing="16" style="-fx-background-color: #F0F0F0; -fx-padding: 20;                              -fx-border-color: #FFFFFF #808080 #808080 #FFFFFF; -fx-border-width: 2;                              -fx-min-width: 380;">
+
+                    <Label style="-fx-font-weight: bold; -fx-text-fill: #000000; -fx-font-size: 14px;" text="Opções de Jogo" />
+                    <Separator style="-fx-background-color: #A0A0A0;" />
+
+                    <VBox spacing="6">
+                        <Label style="-fx-font-size: 13px; -fx-font-weight: bold; -fx-text-fill: #000000;" text="Modo de Jogo:" />
+                        <HBox alignment="CENTER_LEFT" spacing="16">
+                            <RadioButton fx:id="rbPvP" onAction="#handleModeChange" selected="true" style="-fx-text-fill: #000000; -fx-font-size: 12px;" text="PvP" />
+                            <RadioButton fx:id="rbPvAI" onAction="#handleModeChange" style="-fx-text-fill: #000000; -fx-font-size: 12px;" text="PvE" />
+                        </HBox>
+                    </VBox>
+
+                    <VBox fx:id="difficultyBox" spacing="6">
+                        <Separator style="-fx-background-color: #A0A0A0;" />
+                        <Label style="-fx-font-size: 13px; -fx-font-weight: bold; -fx-text-fill: #000000;" text="Dificuldade (Computador):" />
+                        <HBox alignment="CENTER_LEFT" spacing="12">
+                            <RadioButton fx:id="rbEasy" selected="true" style="-fx-text-fill: #000000; -fx-font-size: 12px;" text="Fácil" />
+                            <RadioButton fx:id="rbMedium" style="-fx-text-fill: #000000; -fx-font-size: 12px;" text="Médio" />
+                            <RadioButton fx:id="rbHard" style="-fx-text-fill: #000000; -fx-font-size: 12px;" text="Difícil" />
+                        </HBox>
+                    </VBox>
+
+                    <Separator style="-fx-background-color: #A0A0A0;" />
+
+                    <VBox spacing="8">
+                        <Label style="-fx-font-size: 13px; -fx-font-weight: bold; -fx-text-fill: #000000;" text="Remoção Inicial:" />
+                        <VBox spacing="3" style="-fx-padding: 0 0 0 8;">
+                            <Label style="-fx-font-size: 11px; -fx-font-weight: bold; -fx-text-fill: #444444;" text="Canto Superior Esquerdo" />
+                            <HBox spacing="16" style="-fx-padding: 0 0 0 12;">
+                                <RadioButton fx:id="rbInitTLH" onAction="#handleInitChange" selected="true" style="-fx-text-fill: #000000; -fx-font-size: 12px;" text="Horizontal" />
+                                <RadioButton fx:id="rbInitTLV" onAction="#handleInitChange" style="-fx-text-fill: #000000; -fx-font-size: 12px;" text="Vertical" />
+                            </HBox>
+                        </VBox>
+                        <VBox spacing="3" style="-fx-padding: 0 0 0 8;">
+                            <Label style="-fx-font-size: 11px; -fx-font-weight: bold; -fx-text-fill: #444444;" text="Canto Superior Direito" />
+                            <HBox spacing="16" style="-fx-padding: 0 0 0 12;">
+                                <RadioButton fx:id="rbInitTRH" onAction="#handleInitChange" style="-fx-text-fill: #000000; -fx-font-size: 12px;" text="Horizontal" />
+                                <RadioButton fx:id="rbInitTRV" onAction="#handleInitChange" style="-fx-text-fill: #000000; -fx-font-size: 12px;" text="Vertical" />
+                            </HBox>
+                        </VBox>
+                        <VBox spacing="3" style="-fx-padding: 0 0 0 8;">
+                            <Label style="-fx-font-size: 11px; -fx-font-weight: bold; -fx-text-fill: #444444;" text="Canto Inferior Esquerdo" />
+                            <HBox spacing="16" style="-fx-padding: 0 0 0 12;">
+                                <RadioButton fx:id="rbInitBLH" onAction="#handleInitChange" style="-fx-text-fill: #000000; -fx-font-size: 12px;" text="Horizontal" />
+                                <RadioButton fx:id="rbInitBLV" onAction="#handleInitChange" style="-fx-text-fill: #000000; -fx-font-size: 12px;" text="Vertical" />
+                            </HBox>
+                        </VBox>
+                        <VBox spacing="3" style="-fx-padding: 0 0 0 8;">
+                            <Label style="-fx-font-size: 11px; -fx-font-weight: bold; -fx-text-fill: #444444;" text="Canto Inferior Direito" />
+                            <HBox spacing="16" style="-fx-padding: 0 0 0 12;">
+                                <RadioButton fx:id="rbInitBRH" onAction="#handleInitChange" style="-fx-text-fill: #000000; -fx-font-size: 12px;" text="Horizontal" />
+                                <RadioButton fx:id="rbInitBRV" onAction="#handleInitChange" style="-fx-text-fill: #000000; -fx-font-size: 12px;" text="Vertical" />
+                            </HBox>
+                        </VBox>
+                        <VBox spacing="3" style="-fx-padding: 0 0 0 8;">
+                            <Label style="-fx-font-size: 11px; -fx-font-weight: bold; -fx-text-fill: #444444;" text="Centro do tabuleiro" />
+                            <HBox style="-fx-padding: 0 0 0 12;">
+                                <RadioButton fx:id="rbInitCenter" onAction="#handleInitChange" style="-fx-text-fill: #000000; -fx-font-size: 12px;" text="Centro" />
+                            </HBox>
+                        </VBox>
+                    </VBox>
+
+                    <Separator style="-fx-background-color: #A0A0A0;" />
+
+                    <VBox spacing="6">
+                        <Label style="-fx-font-size: 13px; -fx-font-weight: bold; -fx-text-fill: #000000;" text="Tempo por Jogada (segundos):" />
+                        <HBox alignment="CENTER_LEFT" spacing="12">
+                            <RadioButton fx:id="rb15s" style="-fx-text-fill: #000000; -fx-font-size: 12px;" text="15s" />
+                            <RadioButton fx:id="rb30s" selected="true" style="-fx-text-fill: #000000; -fx-font-size: 12px;" text="30s" />
+                            <RadioButton fx:id="rb60s" style="-fx-text-fill: #000000; -fx-font-size: 12px;" text="60s" />
+                            <RadioButton fx:id="rbNoTimer" style="-fx-text-fill: #000000; -fx-font-size: 12px;" text="Sem Limite" />
+                        </HBox>
+                    </VBox>
+                </VBox>
+
+                <VBox alignment="TOP_CENTER" prefWidth="190" spacing="16" style="-fx-background-color: #F0F0F0; -fx-padding: 16;                              -fx-border-color: #FFFFFF #808080 #808080 #FFFFFF; -fx-border-width: 2;">
+                    <Label style="-fx-font-weight: bold; -fx-text-fill: #000000; -fx-font-size: 14px;" text="Resumo" />
+                    <Separator style="-fx-background-color: #A0A0A0;" />
+                    <VBox alignment="CENTER_LEFT" spacing="8">
+                        <Label fx:id="lblSummaryMode" style="-fx-text-fill: #000000; -fx-font-size: 12px;" text="Modo: PvP" />
+                        <Label fx:id="lblSummaryDifficulty" style="-fx-text-fill: #000000; -fx-font-size: 12px;" text="Dificuldade: —" />
+                        <Label style="-fx-text-fill: #000000; -fx-font-size: 12px;" text="Tabuleiro: 6×6" />
+                        <Label fx:id="lblSummaryInit" style="-fx-text-fill: #000000; -fx-font-size: 12px;" text="Início: Sup. Esq. — Horizontal" />
+                        <Label fx:id="lblSummaryTimer" style="-fx-text-fill: #000000; -fx-font-size: 12px;" text="Tempo: 30s" />
+                    </VBox>
+                    <Separator style="-fx-background-color: #A0A0A0;" />
+                    <VBox alignment="CENTER" spacing="8">
+                        <Button fx:id="btnStartGame" onAction="#handleStartGame" prefHeight="36" prefWidth="160" style="-fx-background-color: #003399; -fx-text-fill: #FFFFFF; -fx-font-size: 13px;                                        -fx-font-weight: bold; -fx-border-color: #6699CC #001166 #001166 #6699CC;                                        -fx-border-width: 2; -fx-cursor: hand;" text="Iniciar Jogo" />
+                        <Button fx:id="btnBack" onAction="#handleSettingsBack" prefHeight="28" prefWidth="160" style="-fx-background-color: #E0E0E0; -fx-text-fill: #000000;                                        -fx-border-color: #FFFFFF #808080 #808080 #FFFFFF;                                        -fx-border-width: 2; -fx-cursor: hand;" text="Voltar" />
+                    </VBox>
+                </VBox>
+            </HBox>
+        </VBox>
+    </StackPane>
+
+
+    <StackPane fx:id="winnerPane" managed="false" style="-fx-background-color: rgba(0,0,0,0.65);" visible="false">
+        <VBox alignment="CENTER" spacing="20">
+            <Label fx:id="lblWinner" style="-fx-text-fill: white; -fx-font-size: 36px; -fx-font-weight: bold;" text="" />
+            <Button onAction="#handleRestart" prefHeight="36" prefWidth="160" style="-fx-background-color: #003399; -fx-text-fill: #FFFFFF; -fx-font-size: 13px;                            -fx-font-weight: bold; -fx-cursor: hand;" text="Jogar Novamente" />
+            <Button onAction="#handleShowMenu" prefHeight="36" prefWidth="160" style="-fx-background-color: #E0E0E0; -fx-text-fill: #000000;                            -fx-border-color: #FFFFFF #808080 #808080 #FFFFFF;                            -fx-border-width: 2; -fx-cursor: hand;" text="Menu Principal" />
+        </VBox>
+    </StackPane>
+
+
+    <StackPane fx:id="savePane" managed="false" style="-fx-background-color: rgba(0,0,0,0.65);" visible="false">
+        <VBox alignment="CENTER" maxWidth="350" spacing="15" style="-fx-background-color: #F0F0F0; -fx-padding: 25;                      -fx-border-color: #FFFFFF #808080 #808080 #FFFFFF; -fx-border-width: 2;">
+            <Label style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #000000;" text="Guardar Jogo" />
+            <Label style="-fx-text-fill: #000000; -fx-font-size: 12px;" text="Nome do ficheiro (sem extensão):" />
+            <TextField fx:id="saveNameInput" prefWidth="280" promptText="Ex: jogo1" />
+            <HBox alignment="CENTER" spacing="15">
+                <Button onAction="#handleConfirmSave" prefHeight="28" prefWidth="120" style="-fx-background-color: #003399; -fx-text-fill: #FFFFFF; -fx-cursor: hand;" text="Guardar" />
+                <Button onAction="#handleCancelSave" prefHeight="28" prefWidth="120" style="-fx-background-color: #E0E0E0; -fx-text-fill: #000000;                                -fx-border-color: #FFFFFF #808080 #808080 #FFFFFF;                                -fx-border-width: 2; -fx-cursor: hand;" text="Cancelar" />
+            </HBox>
+            <Label fx:id="lblSaveMsg" style="-fx-text-fill: #CC0000; -fx-font-size: 11px;" text="" />
+        </VBox>
+    </StackPane>
+
+
+    <StackPane fx:id="loadPane" managed="false" style="-fx-background-color: rgba(0,0,0,0.65);" visible="false">
+        <VBox alignment="CENTER" maxWidth="400" spacing="15" style="-fx-background-color: #F0F0F0; -fx-padding: 25;                      -fx-border-color: #FFFFFF #808080 #808080 #FFFFFF; -fx-border-width: 2;">
+            <Label style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #000000;" text="Carregar Jogo" />
+            <Label style="-fx-text-fill: #000000; -fx-font-size: 12px;" text="Escolhe um ficheiro:" />
+            <ListView fx:id="saveFilesList" prefHeight="200" prefWidth="340" />
+            <HBox alignment="CENTER" spacing="15">
+                <Button onAction="#handleConfirmLoad" prefHeight="28" prefWidth="120" style="-fx-background-color: #003399; -fx-text-fill: #FFFFFF; -fx-cursor: hand;" text="Carregar" />
+                <Button onAction="#handleCancelLoad" prefHeight="28" prefWidth="120" style="-fx-background-color: #E0E0E0; -fx-text-fill: #000000;                                -fx-border-color: #FFFFFF #808080 #808080 #FFFFFF;                                -fx-border-width: 2; -fx-cursor: hand;" text="Cancelar" />
+            </HBox>
+            <Label fx:id="lblLoadMsg" style="-fx-text-fill: #CC0000; -fx-font-size: 11px;" text="" />
+        </VBox>
+    </StackPane>
+
+</StackPane>

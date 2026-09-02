@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<component LANGUAGE_LEVEL="JDK_24" inherit-compiler-output="true" inheritJdk="true">
-	<output-test url="file://$MODULE_DIR$/../../../out/test/JG3_DanielMasqueiro129853_GoncaloSobral129850_RafaelSilva129834"/>
-	<exclude-output/>
-	<contentEntry url="file://$MODULE_DIR$/../../..">
-		<excludeFolder url="file://$MODULE_DIR$/../../../target"/>
-	</contentEntry>
-</component>
